@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>REILAB Apps</title><meta name="description" content="Android apps by REILAB Apps"><meta name="theme-color" content="#5B2A86">
+<style>
+:root { --bg: #f4f2f7; --card: #ffffff; --ink: #1d1825; --muted: #625b6e; --line: #e2dcea; --brand: #5B2A86; --brand-ink: #ffffff; --ok: #1f8a4c; }
+@media (prefers-color-scheme: dark) { :root { --bg: #121016; --card: #1c1922; --ink: #ece8f2; --muted: #a59db1; --line: #2e2936; --brand: #b48ae0; --brand-ink: #1a0f26; --ok: #5fd08f; } }
+* { box-sizing: border-box; } html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.wrap { max-width: 560px; margin: 0 auto; padding: 20px 16px 40px; display: flex; flex-direction: column; gap: 16px; }
+a { color: var(--brand); }
+.hero { display: flex; gap: 14px; align-items: center; }
+.hero svg { flex: none; border-radius: 22%; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
+h1 { margin: 0; font-size: 1.6rem; line-height: 1.15; letter-spacing: -.01em; }
+.by { color: var(--muted); font-size: .9rem; }
+.tag { margin: 0; font-size: 1.05rem; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.step { display: flex; flex-direction: column; gap: 8px; }
+.step + .step { border-top: 1px solid var(--line); padding-top: 14px; margin-top: 4px; }
+.num { font: 700 .75rem/1 system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.price { font-size: 1.9rem; font-weight: 800; letter-spacing: -.02em; }
+.btn { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 12px 18px; border-radius: 12px; font-weight: 700; font-size: 1.05rem; text-decoration: none; background: var(--brand); color: var(--brand-ink); }
+.btn.alt { background: transparent; color: var(--brand); border: 2px solid var(--brand); }
+.btn svg { width: 22px; height: 22px; }
+.note { color: var(--muted); font-size: .88rem; margin: 0; }
+h2 { font-size: 1.05rem; margin: 6px 0 0; }
+ol, ul { margin: 0; padding-left: 1.25em; display: flex; flex-direction: column; gap: 6px; }
+.shots { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; }
+.shots img { height: 380px; width: auto; border-radius: 14px; border: 1px solid var(--line); scroll-snap-align: start; flex: none; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 14px; color: var(--muted); font-size: .88rem; }
+.list a.app { display: flex; gap: 12px; align-items: center; text-decoration: none; color: inherit; }
+.list .name { font-weight: 700; font-size: 1.1rem; } .list .sub { color: var(--muted); font-size: .9rem; }
+footer { color: var(--muted); font-size: .82rem; text-align: center; margin-top: 8px; }
+</style></head><body><div class="wrap">
+  <h1>REILAB Apps</h1><p class="tag">Android apps. Tap one to download.</p>
+  <section class="card list"><a class="app" href="colony-counter/"><svg viewBox="0 0 108 108" width="56" height="56" role="img" aria-label="Colony Counter icon"><rect width="108" height="108" rx="24" fill="#5B2A86"/><circle cx="54" cy="54" r="29" fill="none" stroke="#fff" stroke-width="3"/><circle cx="54" cy="54" r="24" fill="#E9C988"/><g fill="#FFF8E7"><circle cx="45" cy="47" r="4"/><circle cx="63" cy="50" r="3"/><circle cx="52" cy="62" r="5"/><circle cx="67" cy="64.5" r="3.5"/><circle cx="42" cy="65" r="3"/><circle cx="56" cy="72.5" r="2.5"/></g></svg><div><div class="name">Colony Counter</div><div class="sub">Count bacterial colonies on a petri dish with your phone camera.</div><div class="sub">Version 1.9.1</div></div></a></section>
+<footer>© 2026 REILAB Apps</footer></div></body></html>
