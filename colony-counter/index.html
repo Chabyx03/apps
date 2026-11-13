@@ -33,6 +33,10 @@ ol, ul { margin: 0; padding-left: 1.25em; display: flex; flex-direction: column;
 .gtag { background: #0a5bd8; color: #fff; font-weight: 800; font-size: .85rem; padding: 6px 9px; border-radius: 8px; letter-spacing: .01em; }
 .gnum { font-size: 1.45rem; font-weight: 800; letter-spacing: .03em; font-variant-numeric: tabular-nums; }
 .gname { color: var(--muted); font-size: .9rem; }
+.codeform { display: flex; flex-direction: column; gap: 8px; }
+input.code { font: 700 1.35rem/1 ui-monospace, Menlo, monospace; letter-spacing: .12em; text-align: center; text-transform: uppercase; padding: 14px 10px; border-radius: 12px; border: 2px solid var(--line); background: var(--bg); color: var(--ink); width: 100%; }
+input.code:focus { outline: none; border-color: var(--brand); }
+.note.err { color: #c0392b; font-weight: 600; } .note.ok { color: var(--ok); font-weight: 600; }
 button.btn { border: 0; width: 100%; font-family: inherit; cursor: pointer; }
 footer { color: var(--muted); font-size: .82rem; text-align: center; margin-top: 8px; }
 </style></head><body><div class="wrap">
@@ -45,9 +49,11 @@ footer { color: var(--muted); font-size: .82rem; text-align: center; margin-top:
       <p class="note">In GCash tap <b>Send → Express Send</b>, paste the number and send <b>₱1,000</b>.</p></div>
     <div class="step"><span class="num">Step 2 · Send your reference number</span>
       <a class="btn alt" href="sms:09985756332?body=Colony%20Counter%20payment%20%E2%82%B11%2C000%20-%20GCash%20Ref%20No.%3A%20"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg> Text my GCash Ref No.</a>
-      <p class="note">The reference number is on your GCash receipt. Your purchase is confirmed when it's received.</p></div>
-    <div class="step"><span class="num">Step 3 · Download</span>
-      <a class="btn alt" href="https://github.com/Chabyx03/apps/releases/download/colony-counter-v1.9.1/Colony-Counter-1.9.1.apk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0l-5-5m5 5l5-5M5 20h14"/></svg> Download Colony Counter 1.9.1</a>
+      <p class="note">The reference number is on your GCash receipt. Once your payment is confirmed we text you a download code.</p></div>
+    <div class="step" data-dl data-app="colony-counter" data-counter="https://github.com/Chabyx03/apps/releases/download/download-counter/colony-counter.count"><span class="num">Step 3 · Enter your code and download</span>
+      <form id="codeForm" class="codeform" autocomplete="off"><label for="code" class="note">Enter the download code we text you after your payment is confirmed.</label>
+        <input id="code" class="code" autocapitalize="characters" autocorrect="off" spellcheck="false" placeholder="XXXXX-XXXXX" maxlength="11" aria-label="Download code">
+        <button class="btn" id="codeBtn" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0l-5-5m5 5l5-5M5 20h14"/></svg> Download Colony Counter 1.9.1</button></form><p class="note" id="codeMsg" aria-live="polite"></p>
       <div class="meta"><span>Version 1.9.1</span><span>1.7 MB</span><span>Android 8.0 or newer</span></div></div>
   </section>
   <section class="card"><h2>Install in 3 taps</h2><ol>
@@ -57,5 +63,6 @@ footer { color: var(--muted); font-size: .82rem; text-align: center; margin-top:
     <p class="note">Updating? Install the new version over the old one: your saved samples stay.</p></section>
   <div class="shots"><img src="shot1.jpg" alt="Colony Counter screenshot 1" loading="lazy"><img src="shot2.jpg" alt="Colony Counter screenshot 2" loading="lazy"><img src="shot3.jpg" alt="Colony Counter screenshot 3" loading="lazy"></div>
   <section class="card"><h2>What it does</h2><ul><li>Live camera with a positioning guide: shoots and counts by itself</li><li>Ignores the dish rim and wall; counts colonies right up to the edge</li><li>Splits touching colonies and marks clumps</li><li>Manual count mode with numbered marks, add and remove by tapping</li><li>On-phone AI brain that learns from the plates you correct</li><li>CFU/mL with dilution, volume and 30–300 / 25–250 countable ranges</li><li>Save and name samples, export as CSV, save marked pictures to Gallery</li><li>Works offline: photos never leave the phone</li></ul></section>
+  <script src="../dl.js" defer></script>
   <script>const b = document.getElementById("copyNum"); b.onclick = async () => { try { await navigator.clipboard.writeText(b.dataset.num); } catch (e) { const t = document.createElement("textarea"); t.value = b.dataset.num; document.body.appendChild(t); t.select(); document.execCommand("copy"); t.remove(); } const old = b.innerHTML; b.textContent = "Copied: " + b.dataset.num; setTimeout(() => b.innerHTML = old, 2500); };</script>
 <footer>© 2026 REILAB Apps</footer></div></body></html>
